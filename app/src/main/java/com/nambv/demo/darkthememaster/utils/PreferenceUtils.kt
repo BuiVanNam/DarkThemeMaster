@@ -15,7 +15,7 @@ object PreferenceUtils {
     const val PREFERENCE_KEY_THEME = "key_theme"
     const val THEME_LIGHT = 0
     const val THEME_DARK = 1
-    const val THEME_SYSTEM = 2
+    const val THEME_SYSTEM = 2 //only available in Android P or higher
 
     fun getCurrentTheme(context: Context) =
         getAppPrefs(context).getInt(PREFERENCE_KEY_THEME, THEME_LIGHT)
@@ -37,8 +37,4 @@ fun SharedPreferences.setValue(key: String, value: Any?) {
         is Long -> edit(commit = true) { putLong(key, value) }
         else -> throw UnsupportedOperationException("Not support type value")
     }
-}
-
-fun SharedPreferences.setStringSetValue(key: String, value: Set<String>?) {
-    edit(commit = true) { putStringSet(key, value) }
 }

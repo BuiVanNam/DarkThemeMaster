@@ -1,6 +1,5 @@
 package com.nambv.demo.darkthememaster.ui
 
-import android.os.Build
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide

@@ -16,6 +16,7 @@ class MainViewModel : ViewModel() {
         get() = _listNews
 
     init {
+        //Should use coroutines + suspend in this case -> use emit liveData, loadData in background thread
         _listNews.value = DataNewSource.getDataNews()
     }
 
